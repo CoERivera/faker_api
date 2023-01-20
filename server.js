@@ -4,8 +4,30 @@ const port = 8000;
 
 // req is shorthand for request
 // res is shorthand for response
-app.get("/api", (req, res) => {
-    res.json({ message: "Hello World" });
+app.get("/api/users/new", (req, res) => {
+    res.json(createUser());
+});
+
+// req is shorthand for request
+// res is shorthand for response
+app.get("/api/user/company", (req, res) => {
+    const userCompany = {
+        user: createUser(),
+        company: createCompany()
+    }
+    res.json(userCompany);
+});
+
+// req is shorthand for request
+// res is shorthand for response
+app.get("/api/companies/new", (req, res) => {
+    res.json(createCompany());
+});
+
+// req is shorthand for request
+// res is shorthand for response
+app.get("/api/users/new", (req, res) => {
+    res.json(newFakeUser);
 });
 
 // this needs to be below the other code blocks
